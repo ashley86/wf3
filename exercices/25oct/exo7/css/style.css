@@ -1,0 +1,12 @@
+li {
+    /* Modifier le type de block */
+    display: inline-block;
+
+    margin: 10px;
+}
+
+span {
+    display: block;
+
+    font-size: 15px;
+}

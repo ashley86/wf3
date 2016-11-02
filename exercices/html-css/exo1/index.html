@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Exercice 1</title>
+<!--        <link href="css/reset.css" rel="stylesheet" media="screen" type="text/css" />-->
+        <link href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" media="screen" type="text/css" />
+        <link href="plugins/lightbox2/css/lightbox.min.css" rel="stylesheet" media="screen" type="text/css" />
+        <link href="https://developers.google.com/maps/documentation/javascript/demos/demos.css" rel="stylesheet" media="screen" type="text/css" />
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+            <!-- Header -->
+            <header>
+               <!-- Bandeau -->
+                <div class="bandeau">
+                    <a href="index.html"><img src="img/drapeau-logo.jpg" alt="Nom de mon site" /></a>
+                </div>
+
+                <!-- Menu -->
+                <nav>
+                    <ul>
+                        <li class="current"><a href="index.html">Accueil</a></li>
+                        <li><a href="presentation.html">Présentation</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+            </header> <!-- /Header -->
+
+            <!-- Contenu principal -->
+            <main>
+
+                <!-- Titre -->
+                <h1><span>Le Wikipé<span>D</span><span>o</span><span>d</span><span>o</span><sup>*</sup> !</span></h1>
+
+                <!-- Contenu -->
+                <section>
+
+                    <p><img src="img/dodo.jpg" alt="Un chien très mignon" /> Le Dronte de Maurice (Raphus cucullatus), plus connu sous le nom de dodo, même si ce n'est pas la seule espèce dont le nom vernaculaire est dodo, est une espèce d'oiseaux endémique de l'île Maurice. Apparenté aux pigeons et appartenant donc à la famille des Columbidae, ce dronte vivait dans les forêts ou les plaines. Il mesurait environ un mètre pour une masse moyenne de 10,2 kilogrammes. Découvert en 1598, il était décrit comme lent, ne fuyant pas l'être humain, gros et presque cubique. Son plumage bleu gris était pourvu d'ailes atrophiées jaune et blanc, ainsi que d'un panache de quatre ou cinq plumes de mêmes couleurs en guise de queue. Ses pattes jaunes comportaient quatre doigts (trois à l'avant et un à l'arrière) ornés de grands ongles noirs. Son bec crochu avait une tache rouge caractéristique à son extrémité et une bleue sur la mandibule inférieure. Sa tête noire ou grise possédait deux plis importants à la base du bec.</p>
+
+                    <p>Le dodo s'est éteint moins d'un siècle après sa découverte, à la fin du xviie siècle avec l'arrivée des Européens. Il est aujourd'hui souvent cité comme un archétype de l'espèce éteinte car sa disparition, survenue à l'époque moderne, est directement imputable à l'activité humaine.</p>
+
+                    <p class="thanks"><small><sup>*</sup> Remerciements à Sonny pour avoir trouvé le nom.</small></p>
+
+                </section>
+
+                <hr />
+
+                <section>
+
+                    <h1><span>Galerie</span></h1>
+
+                    <div class="gallery">
+                        <a href="img/gallery/big/1.jpg" target="_blank" data-lightbox="image" data-title="Image 1"><img src="img/gallery/1.jpg" alt="" /></a>
+                        <a href="img/gallery/big/2.jpg" target="_blank" data-lightbox="image" data-title="Image 2"><img src="img/gallery/2.jpg" alt="" /></a>
+                        <a href="img/gallery/big/3.jpg" target="_blank" data-lightbox="image" data-title="Image 3"><img src="img/gallery/3.jpg" alt="" /></a>
+                        <a href="img/gallery/big/4.jpg" target="_blank" data-lightbox="image" data-title="Image 4"><img src="img/gallery/4.jpg" alt="" /></a>
+                        <a href="img/gallery/big/5.jpg" target="_blank" data-lightbox="image" data-title="Image 5"><img src="img/gallery/5.jpg" alt="" /></a>
+                        <a href="img/gallery/big/6.jpg" target="_blank" data-lightbox="image" data-title="Image 6"><img src="img/gallery/6.jpg" alt="" /></a>
+                        <a href="img/gallery/big/7.jpg" target="_blank" data-lightbox="image" data-title="Image 7"><img src="img/gallery/7.jpg" alt="" /></a>
+                    </div>
+
+                </section>
+
+            </main> <!-- /Contenu principal -->
+
+         </div> <!-- /wrapper -->
+
+         <!-- Footer -->
+        <footer>
+
+            <!-- GMaps -->
+            <div class="mymap">
+               <div id="map"></div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter">
+               <h2>Newsletter</h2>
+                <form name="newsletter" method="post" action="newsletter.php">
+
+                    <input type="text" name="email" id="email" placeholder="E-mail" /> <br />
+                    <input type="text" name="prenom" id="prenom" placeholder="Prénom" /> <br />
+                    <input type="text" name="nom" id="nom" placeholder="Nom" /> <br />
+                    <input type="submit" value="S'inscrire" />
+
+                </form>
+            </div>
+
+            <!-- Contact -->
+            <div class="contact">
+                <h2>Contactez-nous</h2>
+
+                <address id="hcard-ambassade-maurice" class="vcard">
+                    <div class="org">Ambassade de Maurice</div>
+                    <a class="email" title="adresse e-mail" href="mailto:contact@mauritius.mu">contact@mauritius.mu</a>
+                    <div class="adr">
+                        <div class="street-address">127 Rue de Tocqueville</div>
+                            <span class="postal-code">75017</span>
+                            <span class="locality">Paris</span>
+                            <span class="country-name">France</span>
+                    </div>
+                    <div class="tel"><a href="tel:0142273019" title="Téléphone">01 42 27 30 19</a></div>
+                </address>
+
+            </div>
+
+        </footer> <!-- /Footer -->
+
+        <!-- Script Area -->
+        <script type="text/javascript" src="plugins/lightbox2/js/lightbox-plus-jquery.min.js"></script>
+        <script type="text/javascript" src="js/script.js">
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIivCN1fwrP-X9ZHsjO2r3ZDsQYJVx6fA&callback=initMap"
+        async defer></script>
+    </body>
+
+</html>

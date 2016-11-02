@@ -1,0 +1,29 @@
+body {
+    /* Ajouter une image de fond */
+    background-image:url('../img/pattern.jpg');
+
+    /* Gérer la répétition de l'image de fond */
+    background-repeat: repeat-y;
+
+    /* Modifier la osition de l'image de fond */
+    background-position: center;
+
+    /* Gérer la taille de l'image de fond */
+    background-size:50px 100px;
+}
+
+header {
+
+    height:800px;
+
+    /* Ajouter une image de fond */
+    background-image: url('../img/space.jpg');
+
+    background-size:100%;
+
+    background-position: bottom;
+
+    /* Ajouter l'effet parallax */
+    background-attachment: fixed;
+
+    }

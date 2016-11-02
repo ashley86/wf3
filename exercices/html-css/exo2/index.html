@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Accueil | Exo2</title>
+
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans" />
+        <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous" />
+
+        <link rel="stylesheet" href="assets/css/fonts.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+
+        <link href="https://developers.google.com/maps/documentation/javascript/demos/demos.css" rel="stylesheet" media="screen" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+            <p>La force de frappe qui forge les forgerons !</p>
+
+            <!-- TopHeader -->
+            <div class="topHeader">
+                <p><i class="fa fa-user-circle" aria-hidden="true"></i> Espace client: <a href="connexion.html">Connexion</a> | <a href="inscription.html">Inscription</a></p>
+            </div> <!-- /TopHeader -->
+
+
+            <!-- Header -->
+            <header>
+
+                <div class="logo"><a href="index.html" title="Logo Enclume"><img src="assets/img/enclume-logo.png" alt="Logo Enclume" /></a></div>
+
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html" class="current">Accueil</a></li>
+                        <li><a href="presentation.html">Présentation</a></li>
+                        <li><a href="formations.html">Nos Formations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+            </header> <!-- /Header -->
+        </div> <!-- /.wrapper -->
+
+        <!-- Bandeau -->
+        <div class="bandeau">
+            <ul class="illustrations">
+               <li><img src="assets/img/slider/forge.jpg" alt="Le feu ça brûle !!"></li>
+                <li><img src="assets/img/slider/forge2.jpg" alt="Le feu ça brûle !!"></li>
+                <li><img src="assets/img/slider/forge3.jpg" alt="Le feu ça brûle !!"></li>
+                <li><img src="assets/img/slider/forge4.jpg" alt="Le feu ça brûle !!"></li>
+                <li><img src="assets/img/slider/forge5.jpg" alt="Le feu ça brûle !!"></li>
+            </ul>
+        </div>
+        <!-- /Bandeau -->
+
+
+
+
+        <div class="wrapper"> <!-- /.wrapper -->
+            <!-- Main -->
+            <main>
+
+                <section>
+
+                    <h1>Enclumez-vous !</h1>
+
+                    <aside>
+
+                        <h2><a href="#">Actualités</a></h2>
+
+                        <article>
+                            <header>
+                                <time pubdate="2016-10-31">31 <em>Octobre</em></time>
+                                <h1><a href="#">Titre de l'article</a></h1>
+                            </header>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
+                            <footer>
+                                <p><a href="#">Lire la suite...</a></p>
+                            </footer>
+                        </article>
+
+                        <article>
+                            <header>
+                                <time pubdate="2016-10-14">14 <em>Octobre</em></time>
+                                <h1><a href="#">Titre de l'article</a></h1>
+                            </header>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
+                            <footer>
+                                <p><a href="#">Lire la suite...</a></p>
+                            </footer>
+                        </article>
+
+                        <article>
+                            <header>
+                                <time pubdate="2016-10-24">1<sup>er</sup> <em>Septembre</em></time>
+                                <h1><a href="#">Titre de l'article</a></h1>
+                            </header>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
+                            <footer>
+                                <p><a href="#">Lire la suite...</a></p>
+                            </footer>
+                        </article>
+
+                    </aside>
+
+
+                    <aside>
+
+                        <h2><a href="#">Évènements</a></h2>
+                        <div class="gcalendar">
+                            <div id="authorize-div" style="display: none">
+                                <span>Authorize access to Google Calendar API</span>
+                                <!--Button for the user to click to initiate auth sequence -->
+                                <button id="authorize-button" onclick="handleAuthClick(event)">Authorize</button>
+                            </div>
+                            <pre id="output"></pre>
+                        </div>
+
+
+
+
+                        <div class="calendar">
+                            <div class="month">
+                                <ul>
+                                    <li class="prev">&#10094;</li>
+                                    <li class="next">&#10095;</li>
+                                    <li>Novembre<br /><span style="font-size:18px">2016</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="weekdays">
+                                <li>Lu</li>
+                                <li>Ma</li>
+                                <li>Me</li>
+                                <li>Je</li>
+                                <li>Ve</li>
+                                <li>Sa</li>
+                                <li>Di</li>
+                            </ul>
+
+                            <ul class="days">
+                                <li class="empty"></li>
+                                <li>1</li>
+                                <li><span class="active">2</span></li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                                <li>7</li>
+                                <li class="event">
+                                   <span>8</span>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#">Tape-lui dessus ! Ça f'ra des Knackis <span>&#10095;&#10095;</span></a></li>
+                                            <li><a href="#">Tape-lui dessus ! Ça f'ra des Knackis <span>&#10095;&#10095;</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>9</li>
+                                <li>10</li>
+                                <li class="event">
+                                    <span>11</span>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#">Fête de l'enclume <span>&#10095;&#10095;</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>12</li>
+                                <li>13</li>
+                                <li>14</li>
+                                <li>15</li>
+                                <li>16</li>
+                                <li>17</li>
+                                <li>18</li>
+                                <li>19</li>
+                                <li>20</li>
+                                <li>21</li>
+                                <li>22</li>
+                                <li class="event">
+                                   <span>23</span>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#">Chaud le marteau ! <span>&#10095;&#10095;</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>24</li>
+                                <li>25</li>
+                                <li>26</li>
+                                <li>27</li>
+                                <li>28</li>
+                                <li>29</li>
+                                <li>30</li>
+                            </ul>
+                        </div>
+
+
+                    </aside>
+
+                    <div class="partners">
+                        <h2>Nos partenaires</h2>
+
+                        <ul>
+                            <li><a href="#"><img src="assets/img/partners/logo-coyote.gif" alt="Partenaire "><span>Le coyote</span></a></li>
+                            <li><a href="#"><img src="assets/img/partners/logo-acme.png" alt="Partenaire "><span>A.C.M.E. Inc.</span></a></li>
+                            <li><a href="#"><img src="assets/img/partners/logo-hammer.gif" alt="Partenaire "><span>Hammer</span></a></li>
+                            <li><a href="#"><img src="assets/img/partners/logo-fire.jpg" alt="Partenaire "><span>FIRE</span></a></li>
+                        </ul>
+                    </div>
+
+                </section>
+
+            </main> <!-- /Main -->
+        </div> <!-- /.wrapper -->
+
+       <!-- Footer -->
+        <footer class="full-width">
+
+            <div class="wrapper">
+
+                <!-- GMaps -->
+                <div class="mymap">
+                   <div id="map"></div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="newsletter">
+                   <h2>Newsletter</h2>
+                    <form name="newsletter" method="post" action="newsletter.php">
+
+                        <input type="text" name="nom" id="nom" placeholder="Nom" /> <br />
+                        <input type="text" name="prenom" id="prenom" placeholder="Prénom" /> <br />
+                        <input type="text" name="email" id="email" placeholder="E-mail" /> <br />
+                        <input type="submit" value="S'inscrire" />
+
+                    </form>
+                </div>
+
+                <!-- Contact -->
+                <div class="contact">
+                    <h2>Contactez-nous</h2>
+
+                    <address id="hcard-ambassade-maurice" class="vcard">
+                        <div class="org">Taper &amp; Cie</div>
+                        <a class="email" title="adresse e-mail" href="mailto:contact@taper-cie.fr">contact@taper-cie.fr</a>
+                        <div class="adr">
+                            <div class="street-address">123 allée des fondus</div>
+                                <span class="postal-code">60128</span>
+                                <span class="locality">Plailly</span>
+                                <span class="country-name">France</span>
+                        </div>
+                        <div class="tel"><a href="tel:0123456789" title="Téléphone">01 23 45 67 89</a></div>
+                    </address>
+
+                </div>
+
+            </div>
+
+        </footer> <!-- /Footer -->
+
+        <div class="bottomFooter">
+            <p>&copy; Copyright <strong>Ash</strong> 2016</p>
+        </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="assets/js/script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIivCN1fwrP-X9ZHsjO2r3ZDsQYJVx6fA&callback=initMap"
+        async defer></script>
+        <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('li').addClass('test');
+            });
+        </script>
+
+    </body>
+</html>

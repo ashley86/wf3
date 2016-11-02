@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Accueil | Exo2</title>
+
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans" />
+        <link rel="stylesheet" href="assets/css/fonts.css" />
+        <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link href="https://developers.google.com/maps/documentation/javascript/demos/demos.css" rel="stylesheet" media="screen" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+            <p>La force de frappe qui forge les forgerons !</p>
+
+            <!-- TopHeader -->
+            <div class="topHeader">
+                <p><i class="fa fa-user-circle" aria-hidden="true"></i> Espace client: <a href="connexion.html">Connexion</a> | <a href="inscription.html">Inscription</a></p>
+            </div> <!-- /TopHeader -->
+
+
+            <!-- Header -->
+            <header>
+
+                <div class="logo"><a href="index.html" title="Logo Enclume"><img src="assets/img/enclume-logo.png" alt="Logo Enclume" /></a></div>
+
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="presentation.html" class="current">Présentation</a></li>
+                        <li><a href="formations.html">Nos Formations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+            </header> <!-- /Header -->
+        </div> <!-- /.wrapper -->
+
+        <!-- Bandeau -->
+        <div class="bandeau">
+            <div class="illustration"></div>
+            <img src="assets/img/illustration-enclume.jpg" alt="Le feu ça brûle !!">
+        </div>
+        <!-- /Bandeau -->
+
+        <div class="wrapper"> <!-- /.wrapper -->
+            <!-- Main -->
+            <main>
+
+                <section>
+
+                    <h1>Présentation</h1>
+
+                    <aside>
+                        <p><i class="fa fa-book" aria-hidden="true"></i></p>
+                    </aside>
+
+                    <article>
+
+                        <p><strong>Enclumez-vous !</strong> Qu'ils disaient !</p>
+                        <p>Je dois écrire un texte pour faire croire que c'est un vrai site... Sinon, j'aurais une mauvaise appréciation de la part du formateur. Maintenant que je l'ai commencé, je vais essayé de le continuer autant que possible pour l'étoffer.</p>
+                        <p>Que diriez-vous d'une petite chanson ?</p>
+                        <p>Non ?! Bon, je vous l'accorde, je ne chante pas très bien. Mais une petite danse alors ? Non plus ?! Vous me décevez ! Mais je vois que vous me connaissez assez bien pour savoir que la danse n'est pas non plus mon fort.</p>
+                        <p>Avec tout ça, j'espère que ce sera suffisant pour faire plaisir au formateur qui acceptera de me donner une bonne appréciation quand il verra tout le mal que je me suis donné pour combler remplir cet espace vide.</p>
+                        <p>Qu'est-ce qu'il ne faut pas faire pour être bien vu ! Cela dit, je vous conseille quand même de vous renseigner au sujet des forgerons. Ce métier d'antan qui est aujourd'hui industrialisé ne possède désormais que peu d'adèpte dans notre beau pays qu'est la France.</p>
+                        <p>Un métier "noble". Entendez-pas là, qu'il n'est pas salit par une mauvaise publicité ou des ragots médisants à son sujet. Lorsque vous parlez d'un forgerons, vous savez que ce dernier gagne son pain à la sueur de son enclume !</p>
+                        <p>Cela étant dit, le téléchargement d'Harry Potter et le Prince de Sang-Mêlé étant terminé, je vais donc arrêter d'écrire ce magnifique roman, qui mériterait d'être publiée, pour aller admirer ce petit film familiale très sympatique.</p>
+                        <p>Ami de la poésie, bisoir !</p>
+
+                    </article>
+
+                </section>
+
+            </main> <!-- /Main -->
+        </div> <!-- /.wrapper -->
+
+       <!-- Footer -->
+        <footer class="full-width">
+
+            <div class="wrapper">
+
+                <!-- GMaps -->
+                <div class="mymap">
+                   <div id="map"></div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="newsletter">
+                   <h2>Newsletter</h2>
+                    <form name="newsletter" method="post" action="newsletter.php">
+
+                        <input type="text" name="email" id="email" placeholder="E-mail" /> <br />
+                        <input type="text" name="prenom" id="prenom" placeholder="Prénom" /> <br />
+                        <input type="text" name="nom" id="nom" placeholder="Nom" /> <br />
+                        <input type="submit" value="S'inscrire" />
+
+                    </form>
+                </div>
+
+                <!-- Contact -->
+                <div class="contact">
+                    <h2>Contactez-nous</h2>
+
+                    <address id="hcard-ambassade-maurice" class="vcard">
+                        <div class="org">Taper &amp; Cie</div>
+                        <a class="email" title="adresse e-mail" href="mailto:contact@taper-cie.fr">contact@taper-cie.fr</a>
+                        <div class="adr">
+                            <div class="street-address">123 allée des fondus</div>
+                                <span class="postal-code">60128</span>
+                                <span class="locality">Plailly</span>
+                                <span class="country-name">France</span>
+                        </div>
+                        <div class="tel"><a href="tel:0123456789" title="Téléphone">01 23 45 67 89</a></div>
+                    </address>
+
+                </div>
+
+            </div>
+
+        </footer> <!-- /Footer -->
+
+        <div class="bottomFooter">
+            <p>&copy; Copyright <strong>Ash</strong> 2016</p>
+        </div>
+
+        <script type="text/javascript" src="assets/js/script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIivCN1fwrP-X9ZHsjO2r3ZDsQYJVx6fA&callback=initMap"
+        async defer></script>
+        <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+
+    </body>
+</html>

@@ -1,0 +1,13 @@
+section {
+    /* Ajouter une bordure */
+    border: 1px solid red;
+
+    /* Modifier la taille de la section */
+    width: 200px;
+
+    /* Ajouter une marge intérieure */
+    padding: 20px 30px 40px 50px;
+
+    /* Ajouter une marge extérieure */
+    margin: 20px auto;
+}
