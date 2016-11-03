@@ -1,8 +1,34 @@
-  /* ---------------/
+  /*----------------/
+ /     General     /
+/----------------*/
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.page p.desc {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.page p.desc em {
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.page p.desc strong {
+    font-weight: normal;
+    color: #fe372a;
+}
+
+  /*----------------/
  /   Conteneurs    /
-/--------------- */
+/----------------*/
 body {
-    background:fixed url(../img/background.jpg) top center no-repeat #000;
+    background:url(../img/background.jpg) top center no-repeat #000;
 }
 
 .page {
@@ -13,30 +39,25 @@ body {
     font:13px/1.5 Arial, sans-serif;
 }
 
-  /* ---------------/
+.wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+}
+
+  /*----------------/
  /      Header     /
-/--------------- */
-.page > p {
-    text-align: center;
-    color:#ffffff;
-    margin-bottom: 10px;
+/----------------*/
+.page > p.desc {
+    color:#fff;
 }
-
-.page > p em {
-    font-weight: normal;
-    text-decoration: underline;
-}
-
 
 header {
     background: linear-gradient(180deg, #ffffff 0%, #dddddd 100%);
     height: 50px;
     box-shadow: 0px 0px 10px 0.00px rgba(0, 0, 0, 0.65);
-}
-
-header .wrapper {
-    width: 960px;
-    margin: auto;
+    z-index: 10;
+    position: relative;
 }
 
 header .lang {
@@ -85,22 +106,243 @@ header nav ul li a {
     color: #202020;
     margin-left: 20px;
     font: 16px/50px "Roboto", sans-serif;
-    text-decoration: none;
 }
 
 header nav ul li.current a,
 header nav ul li a:hover {
     color: #3060a7;
-    text-decoration: underline;
 }
 
 header nav ul li:nth-child(3) a {
     color: #fe3224;
 }
 
-  /* --------------------/
+  /*---------------------/
  /  Contenu principal   /
-/-------------------- */
-section {
-
+/---------------------*/
+main {
+    background: url(../img/main-background.jpg) no-repeat center top transparent;
+    padding-bottom: 24px;
 }
+
+main section {
+    width: 100%;
+    max-width: 339px;
+    border-left: 5px solid #c43e3e;
+    background: linear-gradient(180deg, #ffffff 0%, #bbbbbb 100%);
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
+main section h1 {
+    margin: 20px 0;
+}
+
+main section ul li {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #fbfbfb 0%, #bbbbbb 100%);
+    height: 69px;
+}
+
+/*
+main section ul li:before {
+    content: '';
+    background:red;
+    border:10px solid green;
+}
+*/
+
+main section ul li:first-child:after {
+    content: '';
+    background: url(../img/hand.png) no-repeat 95% 100% transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+main section ul li:hover {
+    background: linear-gradient(180deg, #fafafa, #aaa);
+}
+
+main section ul li a {
+    position: relative;
+    z-index: 20;
+}
+
+main section ul li:nth-child(1) a {
+    color: #fe3626;
+}
+
+main section ul li:nth-child(2) a {
+    color: #bc8242;
+}
+
+main section ul li:nth-child(3) a {
+    color: #3860a7;
+}
+
+main section ul li:nth-child(4) a {
+    color: #08a640;
+}
+
+main section ul li a {
+    font: 18px/1.5 Roboto, sans-serif;    
+}
+
+main section ul li a span {
+    display: block;
+    color: #000;
+    font:italic 14px/1 'Times New Roman';
+}
+
+main hr {
+    background-color: #fe3224;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    border: none;
+    position: relative;
+    margin: 24px 0 0;
+}
+
+main hr:after {
+    content: '';
+    background: url(../img/flower.png) no-repeat center bottom transparent;
+    width: 100%;
+    height: 62px;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+}
+
+main footer {
+    background: -webkit-radial-gradient(center, ellipse closest-side, #ffffff 0%, #febeb9 100%);
+    text-align: center;
+    padding: 15px 0 24px;
+}
+
+main footer a {
+    display: inline-block;
+    position: relative;
+    padding: 11px 23px 13px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #fe8e86, #fe3224);
+    font: 18px/1 Roboto;
+}
+
+main footer a:before,
+main footer a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 147px;
+    height: 36px;
+    top: 2px;
+    left: calc(100% + 25px);
+    background: url(../img/arrows.png) no-repeat right center transparent;
+}
+
+main footer a:after {
+    left:auto;
+    right: calc(100% + 25px);
+    background-position: left center;
+}
+
+main footer a span:after {
+    content: '';
+    width: 35px;
+    height: 29px;
+    position: absolute;
+    right: 5px;
+    bottom: -18px;
+    background:url(../img/hand.png) no-repeat 0 0 transparent;
+}
+
+  /*---------------------/
+ /     Pied de page     /
+/---------------------*/
+#footer {
+    width: 100%;
+    background: linear-gradient(180deg, #323232 0%, #222222 100%);
+}
+
+#footer .wrapper {
+    overflow: hidden;
+    padding: 100px 0 150px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#footer .wrapper div {
+    width: 25%;
+    margin-bottom: 15px;
+}
+
+#footer .wrapper div:nth-child(-n+3) {
+    margin-bottom: 35px;
+} 
+
+#footer .wrapper div a {
+    color: #fff;
+    font: 15px serif;
+}
+
+#footer .wrapper div.newsletter {
+    width: 50%;
+}
+
+#footer .wrapper div h2 {
+    font: normal normal 18px/1 "Roboto", sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+#footer .wrapper div:nth-child(-n+3) h2 {
+    font-size: 22px;
+}
+
+#footer .wrapper div ul {
+    padding-left: 20px;
+}
+
+#footer .wrapper .social ul {
+    padding: 0;
+}
+
+#footer .wrapper .social ul li {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#footer .wrapper .social ul li:first-child {
+    margin-left: 0;
+}
+
+#footer .wrapper .social ul li a {
+    display: block;
+    color: #333;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+
+
+
+
