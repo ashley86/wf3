@@ -105,7 +105,7 @@ header nav ul li {
 header nav ul li a {
     color: #202020;
     margin-left: 20px;
-    font: 16px/50px "Roboto", sans-serif;
+    font: 16px/50px "Roboto Condensed", sans-serif;
 }
 
 header nav ul li.current a,
@@ -222,7 +222,7 @@ main hr:after {
 }
 
 main footer {
-    background: -webkit-radial-gradient(center, ellipse closest-side, #ffffff 0%, #febeb9 100%);
+    background: -webkit-radial-gradient(circle, #ffffff 0%, #febeb9 100%);
     text-align: center;
     padding: 15px 0 24px;
 }
@@ -237,6 +237,11 @@ main footer a {
     text-transform: uppercase;
     background: linear-gradient(180deg, #fe8e86, #fe3224);
     font: 18px/1 Roboto;
+}
+
+main footer a:hover {
+    background: linear-gradient(0deg, #fe8e86, #fe3224);
+    text-decoration: none;
 }
 
 main footer a:before,
@@ -254,7 +259,29 @@ main footer a:after {
 main footer a:after {
     left:auto;
     right: calc(100% + 25px);
-    background-position: left center;
+    background-position: 0 center;
+    transition: all .5s;
+}
+
+main footer a:hover:after {
+    animation: mal 2s ease infinite;
+}
+
+main footer a:hover:before {
+    animation: mar 2s ease infinite;
+}
+
+@keyframes mal{
+     from { background-position:0 center; }
+     50%  { background-position:59px center; }
+     to   { background-position:0 center; }
+}
+
+
+@keyframes mar{
+     from { background-position:right center; }
+     50%  { background-position:-600px center; }
+     to   { background-position:right center; }
 }
 
 main footer a span:after {
@@ -265,6 +292,15 @@ main footer a span:after {
     right: 5px;
     bottom: -18px;
     background:url(../img/hand.png) no-repeat 0 0 transparent;
+    transition: all 1s;
+    transition-timing-function: ease-in-out;
+}
+
+main footer a:hover span:after {
+    right: 50px;
+    bottom: -10px;
+    transition: all 1s;
+    transition-timing-function: ease-in-out;
 }
 
   /*---------------------/
@@ -273,11 +309,15 @@ main footer a span:after {
 #footer {
     width: 100%;
     background: linear-gradient(180deg, #323232 0%, #222222 100%);
+    border-top: 5px solid #fe372a;
+    border-bottom: 12px solid #fe372a;
+    margin-top: 110px;
 }
 
 #footer .wrapper {
     overflow: hidden;
     padding: 100px 0 150px;
+    position: relative;
     
     display: flex;
     flex-wrap: wrap;
@@ -286,16 +326,16 @@ main footer a span:after {
 
 #footer .wrapper div {
     width: 25%;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
 }
 
 #footer .wrapper div:nth-child(-n+3) {
-    margin-bottom: 35px;
+    margin-bottom: 60px;
 } 
 
 #footer .wrapper div a {
     color: #fff;
-    font: 15px serif;
+    font: 15px Arial, sans-serif;
 }
 
 #footer .wrapper div.newsletter {
@@ -303,7 +343,7 @@ main footer a span:after {
 }
 
 #footer .wrapper div h2 {
-    font: normal normal 18px/1 "Roboto", sans-serif;
+    font: 18px/1 "Roboto", sans-serif;
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 25px;
@@ -342,7 +382,71 @@ main footer a span:after {
     line-height: 32px;
 }
 
+#footer .wrapper .social ul li a i:before {
+    position: relative;
+}
 
+#footer .wrapper .social ul li a:hover i:before {
+    animation: bounce 0.7s ease infinite;
+}
 
+@keyframes bounce{
+     from { bottom: -2px; }
+     50%  { bottom:  2px; }
+     to   { bottom: -2px; }
+}
+
+#footer .wrapper .newsletter input {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: none;
+    color: #fff;
+    font: 14px "Roboto", sans-serif;
+    width: 50%;
+    outline: none;
+    text-indent: 10px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+#footer .wrapper .newsletter input:focus {
+    border-color: #fe3224;
+}
+
+#footer .wrapper .newsletter input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+#footer .wrapper .newsletter input[type=submit] {
+    border:1px solid #fff;
+    background-color: #333;
+    line-height: 20px;
+    padding: 0 30px;
+    margin-left: 25px;
+    width: auto;
+    text-indent: 0;
+}
+
+#footer .logo-hlm {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.konami span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 35px;
+    height: 29px;
+    -ms-transform: rotate(25deg); /* IE 9 */
+    -webkit-transform: rotate(25deg); /* Safari */
+    transform: rotate(25deg);
+    background: url(../img/hand.png);
+    box-shadow: 0 0 10px red;
+    z-index: 1000;
+}
 
 
