@@ -77,6 +77,13 @@ header .lang a {
     text-indent: -10000px;
     height: 19px;
     width: 29px;
+    opacity: .7;
+    transition: all 0.3s;
+}
+
+header .lang a:hover {
+    opacity: 1;
+    transition: all 0.3s;
 }
 
 header .lang a.fr-FR {
@@ -315,53 +322,89 @@ main footer a:hover span:after {
 }
 
 #footer .wrapper {
-    overflow: hidden;
     padding: 100px 0 150px;
     position: relative;
-    
+}
+
+#footer .nav {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 }
 
-#footer .wrapper div {
+#footer .nav div {
     width: 25%;
     margin-bottom: 40px;
+    box-sizing: border-box;
 }
 
-#footer .wrapper div:nth-child(-n+3) {
+#footer .nav div:last-child {
+    margin-bottom: 0;
+}
+
+#footer .nav div:nth-child(-n+3) {
     margin-bottom: 60px;
 } 
 
-#footer .wrapper div a {
+#footer .nav div a {
     color: #fff;
-    font: 15px Arial, sans-serif;
+    font: 15px/22px Arial, sans-serif;
+    position: relative;
 }
 
-#footer .wrapper div.newsletter {
+#footer .nav div a:hover:before {
+    content:'>';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 10px;
+    height: 10px;
+    color:#fff;
+    animation: arrowLink 0.7s ease infinite;
+}
+
+@keyframes arrowLink{
+     from { left: -20px; }
+     50%  { left: -22px; }
+     to   { left: -20px; }
+}
+
+#footer .nav div.newsletter {
     width: 50%;
 }
 
-#footer .wrapper div h2 {
+#footer .nav div h2 {
     font: 18px/1 "Roboto", sans-serif;
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 25px;
 }
 
-#footer .wrapper div:nth-child(-n+3) h2 {
+#footer .nav div:nth-child(-n+3) h2 {
     font-size: 22px;
 }
 
-#footer .wrapper div ul {
-    padding-left: 20px;
+#footer .nav div ul {
+    padding-left: 10px;
 }
 
-#footer .wrapper .social ul {
+#footer .nav div:first-child li {
+    position: relative;
+}
+
+#footer .nav div:first-child i {
+    position: absolute;
+    left: -20px;
+    color: #fff;
+    font-size: 18px;
+}
+
+#footer .nav .social ul {
     padding: 0;
 }
 
-#footer .wrapper .social ul li {
+#footer .nav .social ul li {
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -371,22 +414,22 @@ main footer a:hover span:after {
     margin-left: 10px;
 }
 
-#footer .wrapper .social ul li:first-child {
+#footer .nav .social ul li:first-child {
     margin-left: 0;
 }
 
-#footer .wrapper .social ul li a {
+#footer .nav .social ul li a {
     display: block;
     color: #333;
     font-size: 18px;
     line-height: 32px;
 }
 
-#footer .wrapper .social ul li a i:before {
+#footer .nav .social ul li a i:before {
     position: relative;
 }
 
-#footer .wrapper .social ul li a:hover i:before {
+#footer .nav .social ul li a:hover i:before {
     animation: bounce 0.7s ease infinite;
 }
 
@@ -396,13 +439,18 @@ main footer a:hover span:after {
      to   { bottom: -2px; }
 }
 
-#footer .wrapper .newsletter input {
+#footer .nav .newsletter form {
+    margin-left: 20px;
+}
+
+#footer .nav .newsletter input {
     border: none;
     border-bottom: 1px solid #fff;
     background: none;
     color: #fff;
-    font: 14px "Roboto", sans-serif;
+    font: 14px/30px "Roboto", sans-serif;
     width: 50%;
+    height: 30px;
     outline: none;
     text-indent: 10px;
     -webkit-appearance: none;
@@ -410,15 +458,16 @@ main footer a:hover span:after {
             appearance: none;
 }
 
-#footer .wrapper .newsletter input:focus {
+#footer .nav .newsletter input:focus {
     border-color: #fe3224;
+    background-color: #444;
 }
 
-#footer .wrapper .newsletter input::-webkit-input-placeholder {
+#footer .nav .newsletter input::-webkit-input-placeholder {
     color: #fff;
 }
 
-#footer .wrapper .newsletter input[type=submit] {
+#footer .nav .newsletter input[type=submit] {
     border:1px solid #fff;
     background-color: #333;
     line-height: 20px;
@@ -428,25 +477,20 @@ main footer a:hover span:after {
     text-indent: 0;
 }
 
+#footer .nav .newsletter input[type=submit]:hover {
+    cursor: pointer;
+    background-color: #444;
+}
+
+#footer .nav .newsletter input[type=submit]:focus {
+    border-color: #fe3224;
+    background-color: #444;
+}
+
 #footer .logo-hlm {
     position: absolute;
     bottom: 0;
     right: 0;
-}
-
-.konami span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    width: 35px;
-    height: 29px;
-    -ms-transform: rotate(25deg); /* IE 9 */
-    -webkit-transform: rotate(25deg); /* Safari */
-    transform: rotate(25deg);
-    background: url(../img/hand.png);
-    box-shadow: 0 0 10px red;
-    z-index: 1000;
 }
 
 
