@@ -1,0 +1,22 @@
+@font-face {
+	font-family:'Myriad Set Pro Thin';
+	font-style:normal;
+	font-weight:500;
+	src:local('☺︎'), url("../fonts/myriad-set-pro_thin.woff") format("woff"), url("../fonts/myriad-set-pro_thin.ttf") format("truetype");
+}
+
+@font-face {
+	font-family:'Myriad Set Pro Med';
+	font-style:normal;
+	font-weight:500;
+	src:local('☺︎'), url("../fonts/myriad-set-pro_medium.woff") format("woff"), url("../fonts/myriad-set-pro_medium.ttf") format("truetype");
+}
+
+@font-face {
+	font-family:'Myriad Set Pro';
+	font-style:normal;
+	font-weight:400;
+	src:url("/wss/fonts/myriad-set-pro_text.eot");
+	src:local('☺︎'), url("../fonts/myriad-set-pro_text.woff") format("woff"), url("../fonts/myriad-set-pro_text.ttf") format("truetype");
+}
+
