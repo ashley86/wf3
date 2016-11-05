@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>06 - Atelier Responsive | A. Ramtohul - WF3 / H. Liegard</title>
+
+    <meta charset="UTF-8" />
+
+    <!-- Pour IE : s'assure qu'il utilise la dernière version du moteur de rendu -->
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+
+    <!-- Affichage sans zoom sur les mobiles -->
+    <meta name="viewport" content="width=device-width, inital-scale=1" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" type="text/css" media="all" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous" />
+
+    <!-- Polyfill -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
+
+
+    <link href="https://developers.google.com/maps/documentation/javascript/demos/demos.css" rel="stylesheet" media="screen" type="text/css" />
+
+</head>
+
+    <body>
+
+        <div class="wrapper">
+
+            <p>La force de frappe qui forge les forgerons !</p>
+
+            <!-- TopHeader -->
+            <div class="topHeader">
+                <p><i class="fa fa-user-circle" aria-hidden="true"></i> Espace client: <a href="connexion.html">Connexion</a> | <a href="inscription.html">Inscription</a></p>
+            </div> <!-- /TopHeader -->
+
+
+            <!-- Header -->
+            <header>
+
+                <div class="logo"><a href="index.html" title="Logo Enclume"><img src="assets/img/enclume-logo.png" alt="Logo Enclume" /></a></div>
+
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html" class="current">Accueil</a></li>
+                        <li><a href="presentation.html">Présentation</a></li>
+                        <li><a href="formations.html">Nos Formations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+            </header> <!-- /Header -->
+        </div> <!-- /.wrapper -->
+
+        <!-- Bandeau -->
+<!--
+        <div class="bandeau">
+            <ul class="illustrations">
+               <li><img src="assets/img/slider/forge.jpg" alt="Le feu ça brûle !!"></li>
+                <li><img src="assets/img/slider/forge2.jpg" alt="Le feu ça brûle !!"></li>
+                <li><img src="assets/img/slider/forge3.jpg" alt="Le feu ça brûle !!"></li>
+                <li><img src="assets/img/slider/forge4.jpg" alt="Le feu ça brûle !!"></li>
+                <li><img src="assets/img/slider/forge5.jpg" alt="Le feu ça brûle !!"></li>
+            </ul>
+        </div>
+-->
+        <!-- /Bandeau -->
+
+
+        <div class="bandeau">
+            <div id="my_carousel" class="carousel slide" data-ride="carousel">
+                <!-- Bulles -->
+                <ol class="carousel-indicators">
+                    <li data-target="#my_carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#my_carousel" data-slide-to="1"></li>
+                    <li data-target="#my_carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    <!-- Page 1 -->
+                    <div class="item active">
+                        <div class="carousel-page">
+                            <img class="img-responsive" style="margin:0px auto;" src="assets/img/slider/forge.jpg" alt="">
+                        </div>
+                        <div class="carousel-caption">Page 1 de présentation</div>
+                    </div>
+                    <!-- Page 2 -->
+                    <div class="item">
+                        <div class="carousel-page">
+                            <img class="img-responsive" style="margin:0px auto;" src="assets/img/slider/forge.jpg" alt="">
+                        </div>
+                        <div class="carousel-caption">Page 2 de présentation</div>
+                    </div>
+
+
+                    <!-- Page 3 -->
+                    <div class="item">
+                        <div class="carousel-page">
+                            <img class="img-responsive" style="margin:0px auto;" src="assets/img/slider/forge.jpg" alt="">
+                        </div>
+                        <div class="carousel-caption">Page 2 de présentation</div>
+                    </div>
+                </div>
+
+                <!-- Contrôles -->
+                <a class="left carousel-control" href="#my_carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#my_carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+
+        <style>
+            .carousel-inner
+            {
+                width:100%;
+                height:400px;
+                background-color:#5f666d;
+                color:white;
+            }
+            .bandeau {
+                height: auto;
+            }
+        </style>
+
+
+
+
+        <div class="wrapper"> <!-- /.wrapper -->
+            <!-- Main -->
+            <main>
+
+                <section>
+
+                    <h1>Enclumez-vous !</h1>
+
+                    <aside>
+
+                        <h2><a href="#">Actualités</a></h2>
+
+                        <article>
+                            <header>
+                                <time pubdate="2016-10-31">31 <em>Octobre</em></time>
+                                <h1><a href="#">Titre de l'article</a></h1>
+                            </header>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
+                            <footer>
+                                <p><a href="#">Lire la suite...</a></p>
+                            </footer>
+                        </article>
+
+                        <article>
+                            <header>
+                                <time pubdate="2016-10-14">14 <em>Octobre</em></time>
+                                <h1><a href="#">Titre de l'article</a></h1>
+                            </header>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
+                            <footer>
+                                <p><a href="#">Lire la suite...</a></p>
+                            </footer>
+                        </article>
+
+                        <article>
+                            <header>
+                                <time pubdate="2016-10-24">1<sup>er</sup> <em>Septembre</em></time>
+                                <h1><a href="#">Titre de l'article</a></h1>
+                            </header>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p>
+                            <footer>
+                                <p><a href="#">Lire la suite...</a></p>
+                            </footer>
+                        </article>
+
+                    </aside>
+
+
+                    <aside>
+
+                        <h2><a href="#">Évènements</a></h2>
+                        <div class="gcalendar">
+                            <div id="authorize-div" style="display: none">
+                                <span>Authorize access to Google Calendar API</span>
+                                <!--Button for the user to click to initiate auth sequence -->
+                                <button id="authorize-button" onclick="handleAuthClick(event)">Authorize</button>
+                            </div>
+                            <pre id="output"></pre>
+                        </div>
+
+
+
+
+                        <div class="calendar">
+                            <div class="month">
+                                <ul>
+                                    <li class="prev">&#10094;</li>
+                                    <li class="next">&#10095;</li>
+                                    <li>Novembre<br /><span style="font-size:18px">2016</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="weekdays">
+                                <li>Lu</li>
+                                <li>Ma</li>
+                                <li>Me</li>
+                                <li>Je</li>
+                                <li>Ve</li>
+                                <li>Sa</li>
+                                <li>Di</li>
+                            </ul>
+
+                            <ul class="days">
+                                <li class="empty"></li>
+                                <li>1</li>
+                                <li><span class="active">2</span></li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                                <li>7</li>
+                                <li class="event">
+                                   <span>8</span>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#">Tape-lui dessus ! Ça f'ra des Knackis <span>&#10095;&#10095;</span></a></li>
+                                            <li><a href="#">Tape-lui dessus ! Ça f'ra des Knackis <span>&#10095;&#10095;</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>9</li>
+                                <li>10</li>
+                                <li class="event">
+                                    <span>11</span>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#">Fête de l'enclume <span>&#10095;&#10095;</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>12</li>
+                                <li>13</li>
+                                <li>14</li>
+                                <li>15</li>
+                                <li>16</li>
+                                <li>17</li>
+                                <li>18</li>
+                                <li>19</li>
+                                <li>20</li>
+                                <li>21</li>
+                                <li>22</li>
+                                <li class="event">
+                                   <span>23</span>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#">Chaud le marteau ! <span>&#10095;&#10095;</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>24</li>
+                                <li>25</li>
+                                <li>26</li>
+                                <li>27</li>
+                                <li>28</li>
+                                <li>29</li>
+                                <li>30</li>
+                            </ul>
+                        </div>
+
+
+                    </aside>
+
+                    <div class="partners">
+                        <h2>Nos partenaires</h2>
+
+                        <ul>
+                            <li><a href="#"><img src="assets/img/partners/logo-coyote.gif" alt="Partenaire "><span>Le coyote</span></a></li>
+                            <li><a href="#"><img src="assets/img/partners/logo-acme.png" alt="Partenaire "><span>A.C.M.E. Inc.</span></a></li>
+                            <li><a href="#"><img src="assets/img/partners/logo-hammer.gif" alt="Partenaire "><span>Hammer</span></a></li>
+                            <li><a href="#"><img src="assets/img/partners/logo-fire.jpg" alt="Partenaire "><span>FIRE</span></a></li>
+                        </ul>
+                    </div>
+
+                </section>
+
+            </main> <!-- /Main -->
+        </div> <!-- /.wrapper -->
+
+       <!-- Footer -->
+        <footer class="full-width">
+
+            <div class="wrapper">
+
+                <!-- GMaps -->
+                <div class="mymap">
+                   <div id="map"></div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="newsletter">
+                   <h2>Newsletter</h2>
+                    <form name="newsletter" method="post" action="newsletter.php">
+
+                        <input type="text" name="nom" id="nom" placeholder="Nom" /> <br />
+                        <input type="text" name="prenom" id="prenom" placeholder="Prénom" /> <br />
+                        <input type="text" name="email" id="email" placeholder="E-mail" /> <br />
+                        <input type="submit" value="S'inscrire" />
+
+                    </form>
+                </div>
+
+                <!-- Contact -->
+                <div class="contact">
+                    <h2>Contactez-nous</h2>
+
+                    <address id="hcard-ambassade-maurice" class="vcard">
+                        <div class="org">Taper &amp; Cie</div>
+                        <a class="email" title="adresse e-mail" href="mailto:contact@taper-cie.fr">contact@taper-cie.fr</a>
+                        <div class="adr">
+                            <div class="street-address">123 allée des fondus</div>
+                                <span class="postal-code">60128</span>
+                                <span class="locality">Plailly</span>
+                                <span class="country-name">France</span>
+                        </div>
+                        <div class="tel"><a href="tel:0123456789" title="Téléphone">01 23 45 67 89</a></div>
+                    </address>
+
+                </div>
+
+            </div>
+
+        </footer> <!-- /Footer -->
+
+        <div class="bottomFooter">
+            <p>&copy; Copyright <strong>Ash</strong> 2016</p>
+        </div>
+
+        <!-- Javascript -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!--
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIivCN1fwrP-X9ZHsjO2r3ZDsQYJVx6fA&callback=initMap"
+        async defer></script>
+        <script type="text/javascript" src="assets/js/script.js"></script>
+        <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+-->
+
+
+    </body>
+</html>
