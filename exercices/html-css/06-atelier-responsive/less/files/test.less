@@ -1,0 +1,817 @@
+// main: main.less
+
+/* ---------------
+ * General
+ * --------------- */
+
+a {
+    text-decoration: none;
+    color: #fe895c;
+    background: linear-gradient( 180deg, #fff, #eee);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-color: #151515;
+    font-size: 14px;
+    font-family: 'Myriad Set Pro Med', sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.wrapper:first-child {
+    margin-top: 40px;
+}
+
+.wrapper > p {
+    text-align: left;
+    color: #fff;
+    margin: 0 0 3px 5px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Myriad Set Pro Thin', sans-serif;
+    font-weight: normal;
+}
+
+.topHeader {
+    width: 100%;
+    height: 30px;
+    float: left;
+    background: -webkit-linear-gradient( top, #fff, #eee);
+    background: linear-gradient( 180deg, #fff, #eee);
+    border-top-right-radius: 5px;
+}
+
+.topHeader p {
+    text-align: right;
+    color: #000;
+    line-height: 30px;
+    margin: 0 10px 0 0;
+}
+
+.topHeader p a {
+    color: #dd0613;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    float: left;
+    background-color: #eee;
+}
+
+header .logo {
+    float: left;
+    position: relative;
+    left: 30px;
+    margin-bottom: 30px;
+    width: 20%;
+}
+
+header .logo a,
+header .logo a img {
+    display: block;
+}
+
+header nav {
+    float: right;
+    width: 80%;
+    padding: 25px 0;
+}
+
+header nav ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline-block;
+    height: 30px;
+    text-align: center;
+    margin: 0 25px;
+}
+
+header nav ul li a {
+    display: inline-block;
+    line-height: 75px;
+    font-size: 16px;
+    color: #333;
+}
+
+header nav ul li a:hover,
+header nav ul li a.current:hover,
+header nav ul li a.current {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fe895c;
+    /*    border-bottom: 1px solid #dd0613;*/
+    border-bottom: 1px solid #fe895c;
+}
+
+header nav ul li a:hover {
+    font-weight: normal;
+}
+
+.bandeau {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    position: relative;
+    overflow: hidden;
+    float: left;
+    height: 600px;
+    width: 100%;
+}
+
+@-webkit-keyframes slidy {
+    0% {
+        left: 0%;
+    }
+    20% {
+        left: 0%;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
+@keyframes slidy {
+    0% {
+        left: 0%;
+    }
+    20% {
+        left: 0%;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
+.illustrations {
+    position: relative;
+    width: 500%;
+    padding: 0;
+    margin-top: 0;
+    -webkit-animation: 30s slidy infinite;
+    animation: 30s slidy infinite;
+}
+
+.illustrations li {
+    width: 20%;
+    height: auto;
+    display: inline-block;
+    position: inherit;
+}
+
+.illustrations img {
+    width: 100%;
+    height: auto;
+    vertical-align: text-top;
+}
+
+
+/* Solution 1 */
+
+
+/*
+.bandeau {
+    width: 100%;
+    height: 400px;
+    float: left;
+}
+
+.bandeau .illustration {
+    position: absolute;
+    background: fixed url("../img/illustration-enclume.jpg") no-repeat center transparent;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 400px;
+}
+
+body {
+    height: 3000px;
+}
+*/
+
+
+/* Solution 2 */
+
+
+/* Probleme de weed */
+
+
+/*
+.bandeau {
+    width: 100%;
+    height: 400px;
+    float: left;
+}
+
+.bandeau .illustration {
+    width: 1920px;
+    height: 400px;
+    background: fixed url("../img/illustration-enclume.jpg") no-repeat center transparent;
+    margin-left: -460px;
+}
+*/
+
+
+/* Solution 3 */
+
+
+/*
+body {
+    background: url("../img/illustration-enclume-3.jpg") no-repeat center 200px #151515;
+}
+
+.bandeau {
+    width: 100%;
+    height: 400px;
+    float: left;
+}
+
+.bandeau .illustration {
+    display: none;
+}
+*/
+
+
+/* Solution 4 */
+
+
+/*
+.wrapper {
+    max-width: inherit;
+}
+
+.wrapper > * {
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    float: none;
+}
+
+.wrapper > p {
+    margin: 0 auto 3px;
+}
+
+.full-width {
+
+    width: 100%;
+}
+
+header {
+    overflow: hidden;
+}
+
+.bandeau .illustration {
+    display: none;
+}
+
+.bandeau {
+    background: fixed url("../img/illustration-enclume.jpg") no-repeat top center transparent;
+    height: 400px;
+}
+*/
+
+main {
+    width: 100%;
+    height: auto;
+    background-color: #eee;
+    overflow: hidden;
+    /*    margin-bottom: 200px;*/
+}
+
+main section aside {
+    float: left;
+    height: auto;
+    width: 50%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+main section h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
+main section aside article {
+    position: relative;
+    padding-left: 85px;
+}
+
+main section aside article header time {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 48px;
+    line-height: 62px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+    width: 70px;
+    height: 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+}
+
+main section aside article header time em {
+    font-size: 12px;
+    line-height: 24px;
+    background: -webkit-linear-gradient( top, #f5a384, #fe895c);
+    background: linear-gradient( 180deg, #f5a384, #fe895c);
+    /*background: #fe895c;
+    background: linear-gradient( 180deg, #fe895c, #fffd7f );
+    /*background: linear-gradient( 180deg, #e13b0b, #fe895c, #fe895c, #fffd7f, #fe895c, #fe895c, #e13b0b );*/
+    color: #fff;
+    font-weight: normal;
+    position: absolute;
+    font-style: normal;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+main section aside article header time sup {
+    font-size: 18px;
+    line-height: 27px;
+    position: absolute;
+    left: 50%;
+    padding-left: 10px;
+    top: 3px;
+}
+
+article header {
+    padding: 0;
+}
+
+main section aside article header h1 {
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+main section aside article header h1 a {
+    color: #000;
+}
+
+main section aside article header h1 a:hover {
+    border-bottom: 1px solid #000;
+    text-decoration: none;
+}
+
+main section aside article footer {
+    text-align: left;
+    position: static;
+    height: auto;
+    box-shadow: none;
+    background: none;
+    clear: initial;
+    margin: auto;
+}
+
+main section aside article footer a {
+    color: #dd0613;
+}
+
+.calendar {
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+}
+
+.calendar ul {
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+
+/* Month header */
+
+.month {
+    padding: 70px 25px;
+    /*background: #1abc9c;*/
+    /*background: linear-gradient(180deg, #777,#555);*/
+    position: relative;
+    height: 185px;
+    box-sizing: border-box;
+}
+
+.month:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../img/bg-fire.jpg);
+    z-index: 1;
+    opacity: 0.25;
+}
+
+.month:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #222;
+    opacity: .8;
+    z-index: 1;
+}
+
+
+/* Month list */
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Previous button inside month header */
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+
+/* Next button */
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+
+/* Weekdays (Mon-Sun) */
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    height: 36px;
+    /*    background-color:#ccc;*/
+    /*    background-color:#fe895c;*/
+    background: -webkit-linear-gradient( top, #f5a384, #fe895c);
+    background: linear-gradient( 180deg, #f5a384, #fe895c);
+}
+
+.weekdays li {
+    width: 13.5%;
+    display: inline-block;
+    color: #666;
+    color: #000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Days (1-31) */
+
+.days {
+    padding: 10px 0;
+    background: #ddd;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.5%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 26px;
+    color: #777;
+}
+
+
+/* Highlight the "current" day */
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important;
+}
+
+.days li.event {
+    position: relative;
+}
+
+.days li.event > span {
+    padding: 5px;
+    background: -webkit-linear-gradient( top, #f5a384, #fe895c);
+    background: linear-gradient( 180deg, #f5a384, #fe895c);
+    color: white !important;
+    cursor: pointer;
+}
+
+.days li.event div {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    z-index: 1;
+    width: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+}
+
+.days li.event:hover div {
+    display: block;
+}
+
+.days li.event div ul {
+    padding: 10px;
+    position: relative;
+}
+
+.days li.event div ul li {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid #333;
+    min-width: 150px;
+}
+
+.days li.event div ul li:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.days li.event div ul li a {}
+
+.days li.event div ul li a span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+main section .partners {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-bottom: 100px;
+}
+
+main section .partners ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+main section .partners ul li {
+    display: block;
+    width: 25%;
+    float: left;
+}
+
+main section .partners ul li a {
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .25);
+    border: 4px solid #fe895c;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+main section .partners ul li a span {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    line-height: 150px;
+    background-color: rgba(0, 0, 0, .7);
+    color: #fe895c;
+    font-size: 24px;
+    font-weight: bold;
+    -webkit-transition: top 0.2s;
+    transition: top 0.2s;
+}
+
+main section .partners ul li a:hover span {
+    top: 0;
+    -webkit-transition: top 0.2s;
+    transition: top 0.2s;
+}
+
+main section .partners ul li a img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+main section .partners ul li a:hover img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+main section > h1 {
+    text-align: center;
+    font-size: 42px;
+}
+
+main section > aside,
+main section > article {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+
+main section > aside > p {
+    text-align: center;
+}
+
+main section > aside i.fa {
+    font-size: 400px;
+    text-shadow: 1px 1px 15px rgba(0, 0, 0, .25);
+}
+
+main section > article {
+    padding: 0 20px 0 0;
+}
+
+main section > article p {
+    text-align: justify;
+}
+
+main section > article p:first-child:first-letter {
+    float: left;
+    font: bold 140px/100px serif;
+    color: #fe895c;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .25);
+}
+
+main section {
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+
+/**
+ * Footer
+ */
+
+footer {
+    /*    background-color: lightyellow;*/
+    position: relative;
+    margin-top: 0px;
+    /* negative value of footer height */
+    height: 200px;
+    clear: both;
+    background: #ddd;
+    box-shadow: 0 -5px 5px rgba(0, 0, 0, .15);
+}
+
+footer.full-width .wrapper {
+    margin-top: 0;
+}
+
+footer .wrapper > div {
+    width: calc( ( 100% - (20px * 2)) / 3);
+    float: left;
+    margin-left: 2%;
+}
+
+footer .wrapper > div:first-child {
+    margin-left: 0;
+}
+
+footer .mymap {
+    margin-left: 0;
+}
+
+footer .mymap #map {
+    height: 200px;
+    max-width: 300px;
+    margin: auto;
+    display: block;
+}
+
+footer h2 {
+    text-align: center;
+}
+
+footer .newsletter form {
+    text-align: center;
+}
+
+footer .newsletter form input {
+    margin-bottom: 5px;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    padding: 3px;
+    font-size: 14px;
+    width: 66%;
+    height: 18px;
+    max-width: 250px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+}
+
+footer .newsletter form input[type=submit] {
+    border: none;
+    width: auto;
+    height: 25px;
+    padding: 0 10px;
+    box-shadow: none;
+    background-color: #ccc;
+    border: 2px solid #bbb;
+    /*    color:#fe895c;*/
+}
+
+footer .newsletter form input[type=submit]:hover {
+    border: 1px solid #aaa;
+    background-color: #bbb;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+}
+
+footer .contact {
+    text-align: center;
+}
+
+footer .contact address {
+    font-style: normal;
+}
+
+
+/**
+ * /Footer
+ */
+
+.bottomFooter {
+    color: #fff;
+    text-align: center;
+}
