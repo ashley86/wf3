@@ -1,8 +1,13 @@
-// out: style.min.css, compress: true, strictMath: true, sourceMap: true, autoprefixer: true
+// out: style-old.min.css, compress: true, strictMath: true, sourceMap: true, autoprefixer: true
 
-  /*-----------------*/
- /*      Global     */
 /*-----------------*/
+
+
+/*      Global     */
+
+
+/*-----------------*/
+
 body {
     margin-top: 15px;
     font: 14px / 1.5 'Open Sans Condensed', sans-serif;
@@ -14,7 +19,7 @@ body > * {
 }
 
 .bg {
-    background:url(../img/background.jpg) repeat 0 0 #eee;
+    background: url(../img/background.jpg) repeat 0 0 #eee;
     position: fixed;
     top: 0;
     right: 0;
@@ -26,29 +31,31 @@ body > * {
 
 .container {
     background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
 }
 
-  /*-----------------*/
- /*      Header     */
+
 /*-----------------*/
+
+
+/*      Header     */
+
+
+/*-----------------*/
+
 header {
-
     .row {
-
         background: linear-gradient(180deg, #f4cb42 0%, #f47a42 100%);
         position: relative;
         height: 200px;
-
         h1 {
             line-height: 150px;
             font: 60px/150px 'Lobster', sans-serif;
             color: #fff;
-            text-shadow: 2px 2px 5px rgba(0,0,0,.5);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
             margin: 0;
-            box-shadow: 0 5px 5px rgba(0,0,0,.15);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, .15);
         }
-
         h2 {
             position: absolute;
             top: 50%;
@@ -57,65 +64,62 @@ header {
             margin: 0;
             font: italic 20px/1.5 'Open Sans Condensed', sans-serif;
             color: #fff;
-            text-shadow: 2px 2px 5px rgba(0,0,0,.5);
-
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
             strong {
                 font-weight: 700;
             }
         }
     }
-
 }
 
-  /*-------------------*/
- /* Contenu principal */
+
 /*-------------------*/
+
+
+/* Contenu principal */
+
+
+/*-------------------*/
+
 main {
     section {
         padding-top: 15px;
         padding-bottom: 15px;
         overflow: hidden;
-
         h3 {
             margin: 0 auto 20px;
             font: 40px/1.5 'Open Sans Condensed', sans-serif;
-
             span {
                 font: 45px / 1.5 'Lobster', sans-serif;
                 color: #f47a42;
             }
         }
-
         figure {
-
             margin: 40px 0;
             &:nth-last-child(-n+3) {
                 margin-bottom: 0;
             }
-
             button.thumbnail {
                 display: inline-block;
                 background-color: #eee;
-                border:none;
+                border: none;
                 padding: 10px 4px 10px;
                 transition: all 0.2s;
                 width: 200px;
-
                 img {
                     height: 150px;
                     width: 150px;
                     object-fit: cover;
-                    border:2px solid #000;
+                    border: 2px solid #000;
                     margin: 5px auto;
                     display: block;
                 }
-
                 figcaption {
                     font-size: 18px;
                 }
-
-                &:hover, &:focus {
-                    box-shadow: 0 0 10px rgba(0,0,0,.3);
+                &:hover,
+                &:focus {
+                    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
                     font-weight: 700;
                     transition: all 0.2s;
                 }
@@ -124,9 +128,15 @@ main {
     }
 }
 
-  /*---------------*/
- /*  Responsive   */
+
 /*---------------*/
+
+
+/*  Responsive   */
+
+
+/*---------------*/
+
 @media (max-width:550px) {
     header {
         .row {

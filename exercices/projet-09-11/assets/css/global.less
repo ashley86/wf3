@@ -1,0 +1,291 @@
+        // main: main.less
+        // out: style.min.css, compress: true, strictMath: true, sourceMap: true, autoprefixer: true
+        /*-----------------*/
+        /*      Global     */
+        /*-----------------*/
+        
+        button {
+            color: #fff;
+            border: none;
+            background: none;
+            padding: 0;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, .15);
+            &:hover,
+            &:active,
+            &:focus {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+        
+        html {
+            background: @color-base;
+            font-size: 62.5%; // 10px
+            body {
+                font: 1.4rem / 1.5 'Open Sans Condensed', sans-serif;
+                padding: 25px 0 50px;
+                outline-color: pink !important;
+                // Accessibilite : Modifie la police pour la dislexie
+                &.dislexic * {
+                    font-family: "opendyslexic", sans-serif !important;
+                }
+                // Accessibilite : Modifie le contraste du site
+                &.contrast * {
+                    background: #000 !important;
+                    color: #fff !important;
+                    div,
+                    section,
+                    header,
+                    aside,
+                    footer {
+                        border: 1px solid #FF0;
+                    }
+                }
+                // Accessibilite : Barre d'affichage des liens
+                .accessibility {
+                    background: #444;
+                    position: relative;
+                    top: -25px;
+                    z-index: 1;
+                    height: 25px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                        li {
+                            display: inline-block;
+                            button {
+                                line-height: 25px;
+                                border-left: 1px solid #fff;
+                                padding: 0 10px;
+                            }
+                            &:first-child {
+                                button {
+                                    border: none;
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                // Conteneur global
+                #page {
+                    position: relative;
+                    z-index: 1;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+                    &.container {
+                        background: #fff;
+                    }
+                }
+                // Fond du site (fruits)
+                .bg {
+                    background: url(../img/background.jpg) repeat 0 0 #eee;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 0;
+                    opacity: .1;
+                }
+            }
+        }
+        /*-----------------*/
+        /*      Header     */
+        /*-----------------*/
+        
+        header {
+            .row:first-child {
+                background: linear-gradient(180deg, @color-lighter 0%, @color-base 100%);
+                position: relative;
+                height: 200px;
+                //        box-shadow: 0 5px 5px rgba(0, 0, 0, .15);
+                h1 {
+                    line-height: 150px;
+                    font: 6rem/150px 'Lobster', sans-serif;
+                    color: #fff;
+                    text-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+                    margin: 0;
+                    sup {
+                        font-size: 100%;
+                        top: -.2em;
+                    }
+                }
+                h2 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, 80%);
+                    margin: 0;
+                    font: italic 2rem/1.5 'Open Sans Condensed', sans-serif;
+                    color: #fff;
+                    text-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+                    strong {
+                        font-weight: 700;
+                    }
+                }
+            }
+            .navbar {
+                background: none;
+                margin-bottom: 0;
+                border: none;
+                .navbar-collapse {
+                    border: none;
+                    .nav {
+                        border: none;
+                        li {
+                            margin-left: 5px;
+                            &:first-child {
+                                margin-left: 0;
+                                a span {
+                                    font-family: 'Glyphicons Halflings' !important;
+                                }
+                            }
+                            a {
+                                box-sizing: border-box;
+                                height: 50px;
+                                font-size: 1.6rem;
+                                border-bottom: 2px solid transparent;
+                                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+                                transition: all 0.2s;
+                            }
+                            &.active a,
+                            &.active a:hover,
+                            &.active a:active,
+                            &.active a:focus,
+                            & a:hover,
+                            & a:active,
+                            & a:focus {
+                                color: @color-base;
+                                background: none;
+                                border-color: @color-base;
+                                background-color: rgba(244, 122, 66, .1);
+                            }
+                        }
+                        &.navbar-right {
+                            margin-right: 0;
+                            .flag {
+                                display: inline-block;
+                                margin-left: 5px;
+                                a {
+                                    border-color: transparent;
+                                    &:hover,
+                                    &:active,
+                                    &:focus {
+                                        opacity: 1;
+                                        background-color: transparent;
+                                    }
+                                    width: 32px;
+                                    height: 50px;
+                                    background: url('../img/flags.png') no-repeat transparent;
+                                    opacity: .7;
+                                }
+                                &.flag-fr a {
+                                    background-position: 0 9px;
+                                }
+                                &.flag-gb a {
+                                    background-position: -32px 9px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /*-------------------*/
+        /* Contenu principal */
+        /*-------------------*/
+        
+        main {
+            section {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                overflow: hidden;
+                h3 {
+                    margin: 0 auto 20px;
+                    font: 4rem/1.5 'Open Sans Condensed', sans-serif;
+                    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+                    span {
+                        font: 4.5rem / 1.5 'Lobster', sans-serif;
+                        color: @color-base;
+                    }
+                }
+                figure {
+                    margin: 40px 0;
+                    &:nth-last-child(-n+4) {
+                        margin-bottom: 0;
+                    }
+                    .thumbnail {
+                        display: inline-block;
+                        background-color: rgba(244, 122, 66, 0.5);
+                        border: none;
+                        padding: 10px 4px 10px;
+                        transition: all 0.2s;
+                        width: 200px;
+                        outline: 0;
+                        img {
+                            height: 150px;
+                            width: 150px;
+                            object-fit: cover;
+                            border: 2px solid @color-base;
+                            margin: 5px auto;
+                            display: block;
+                            transition: all 0.2s;
+                            border-radius: 50%;
+                        }
+                        & + figcaption {
+                            font-size: 1.8rem;
+                        }
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+                            transition: all 0.2s;
+                            background-color: @color-base;
+                            color: #fff;
+                            img {
+                                border-color: @color-lighter;
+                                border-width: 4px;
+                                transform: scale(1.1);
+                                transition: all 0.2s;
+                            }
+                            & + figcaption {
+                                font-weight: bold;
+                                color: @color-base;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /*---------------*/
+        /*    Footer     */
+        /*---------------*/
+        
+        footer {
+            nav {
+                background-color: @color-base;
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    li {
+                        display: inline-block;
+                        margin: 10px 30px;
+                        a,
+                        button {
+                            color: #fff;
+                            border: none;
+                            background: none;
+                            padding: 0;
+                            text-shadow: 1px 1px 1px rgba(0, 0, 0, .15);
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                color: #fff;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
