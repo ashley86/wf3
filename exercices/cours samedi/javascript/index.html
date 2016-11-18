@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Document sans nom</title>
+<script type="text/javascript">
+var currentDiv;
+function chargement(){
+	//alert("document chargé!");
+	//1) Récupération d'un objet du DOM (ici la div carre) afin de lui appliquer
+	//des propriétés CSS.
+	currentDiv = document.getElementById('carre');
+	currentDiv.style.width = "200px";
+	currentDiv.style.height = "200px";
+	document.getElementById('carre').style.backgroundColor = "rgba(255,0,0,.5)";
+	currentDiv.style.position = "absolute";
+	currentDiv.style.cursor = "pointer";
+}
+function move(){
+	//setInterval permet de créer un répétition tous les x secondes, ici on appele la
+	//fonction deplace tous les 20 millisecondes.
+	//un setInterval doit être annulé à l'aide de clearInterval.
+	setInterval('deplace()', 20);
+}
+function deplace(){
+	//alert("deplace");
+	if(currentDiv.offsetLeft+10+currentDiv.offsetWidth<window.innerWidth){
+		currentDiv.style.left = currentDiv.offsetLeft+10+"px";
+	}else{
+		currentDiv.style.left = window.innerWidth-currentDiv.offsetWidth+"px";	
+	}
+}
+</script>
+</head>
+<!-- utilisation de l'attribut onload signifiant que le document est chargé et affiché. -->
+<body onload="javascript:chargement();">
+<div id="carre" onClick="javascript:move();"></div>
+
+
+<script type="text/javascript">
+//Appel à la fonction "chargement" juste avant la fermeture de body (équivaut à onload),
+//tous les éléments html sont chargés et affichés
+//chargement();
+</script>
+</body>
+</html>

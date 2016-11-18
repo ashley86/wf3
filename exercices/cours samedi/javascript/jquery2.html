@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Document sans nom</title>
+<style type="text/css">
+*{margin:0; padding:0}
+</style>
+<script type="text/javascript" src="libs/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+// En jQuery la référence à tout(s) objet(s) se fait à l'aide de $()
+// Récupération d'un ID $('#nomID')
+// Récupération par une classe $('.nomDeClasse')
+// Récupération par une balise $('nomDeBalise')
+// Récupération de l'objet fenêtre du navigateur $(window)
+// Récupération du document $(document)
+// On ajoute un écouteur d'evt "ready" sur le document equivalent à body onload
+// la fonction "callback" n'a pas de nom et a comme paramètre l'evt (e=l'evenement).
+$(window).load(
+function(e) {
+	placeImage();
+	//On ajoute un écouteur d'evt click sur l'image
+	//L'ajout peut se faire via on, live, bind
+	//On peut retirer les evts avec die() pour on et live, unbind pour bind
+	$('img').bind('click', function(e){
+		//On fait appel à la fonction openShadow en lui passant en paramètre l'objet
+		//cliqué (ici l'image, balise img) à l'aide de $(this).
+		//$(this) fait référence à l'objet ayant déclenché l'evênement de souris
+		openShadow($(this),800);
+		});
+	}
+);
+$(window).resize(function(){
+	placeImage();
+});
+function openShadow(pElement, pVitesse){
+	//alert(pElement.attr('src'));
+	//On ajoute un div en tant que dernier élémént dans le body à l'aide de
+	//la function (méthode) append de jQuery
+	//Pour les absents (c'est mal!!!!) voir aussi before(), after(), html().
+	$('body').append('<div id="bgShadow"></div>');
+	//On dimensionne, colorise le div en question et on le centre dans la fenêtre
+	//afin ensuite de déclencher un animation (avec animate) pour qu'il fasse la largeur
+	//et la hauteur de la fenêtre
+	$('#bgShadow').css("position", "absolute");
+	$('#bgShadow').css("width", "10%");
+	$('#bgShadow').css("height", "10%");
+	$('#bgShadow').css("background-color", "rgba(0,0,0,.8)");
+	$('#bgShadow').css("left", "45%");
+	$('#bgShadow').css("top", "45%");
+	//Utilisation de animate (fonction native (methode) de jQuery
+	//monDiv.animate({proprietés}, durée, callBack function éxécutée à la fin de l'animation);
+	//l'enumération des propriétés dans les accolades se fait de la sorte nom de propriété : valeur, s'il y a plusieurs propriétés les séparer par des virgules
+	$('#bgShadow').animate(
+	{
+		width:$(window).innerWidth(),
+		height:$(window).innerHeight(),
+		left:0,
+		top:0
+		
+	},pVitesse, function(){
+		//On récupère ce qui est écrit dans l'attribut src de l'image cliquéé, qui
+		//ici est pElement
+		var imageOrigine = pElement.attr('src');
+		//On trouve le numéro d'index du dernier / dans la chaine de caractère
+		//lastIndexOf permet de trouver le numéro d'index d'un caractère dans une chaine
+		//en partant de la fin pour partir du début utiliser indexOf
+		var numIndexSlash = imageOrigine.lastIndexOf('/');
+		//On extrait le nom et l'extension de l'image
+		//substr extrait une chaine d'une chaine en utilisant les numéros d'index (chiffres) ( on peut passer deux paramètres substr(début, fin), si le second paramètre n'est pas renseigné, on part de l'index de début jusq'à la fin de la chaine.
+		var fileName = imageOrigine.substr(numIndexSlash+1);
+		//On casse la chaine de caractère optenue par rapport au point, le résultat sera un tableau de deux colonnes, en colonne 0 le nom de l'image, en colonne 1 l'extension
+		var tab = fileName.split('.');
+		//On reconstitue la valeur du src de la grande image.
+		var srcGrande = "images/"+tab[0]+"-big."+tab[1];
+		$('#bgShadow').html('<img src="'+srcGrande+'" alt="" onload="javascript:dimensionneEtCentre();"/>');
+		//
+		});
+	 
+}
+function dimensionneEtCentre(){
+	positionne();
+	//Lancement de la function initUI
+	initUI();
+	$(window).resize(function(){
+		$('#bgShadow').css("width", $(window).innerWidth()+17);
+		$('#bgShadow').css("height", $(window).innerHeight()+17);
+		positionne();
+		
+	});
+}
+function positionne(){
+	$('#bgShadow img:not(.ui)').css("width", "60%");
+	$('#bgShadow img:not(.ui)').css("position", "absolute");
+	var l= ($(window).innerWidth()-$('#bgShadow img:not(.ui)').width())/2;
+	console.log(l);
+	$('#bgShadow img:not(.ui)').css("margin-left", 0);
+	$('#bgShadow img:not(.ui)').css("margin-top", 0);
+	$('#bgShadow img:not(.ui)').css("left", l+"px");
+	var t= ($(window).innerHeight()-$('#bgShadow img:not(.ui)').height())/2;
+	$('#bgShadow img:not(.ui)').css("top",t+"px");
+	}
+function initUI(){
+	//1 Placer une image (croix pour fermer) dans #bgShadow (attention l'image doit avoir la classe ui).
+	$('#bgShadow').append('<img src="images/close.png" alt="" class="ui"/>');
+	//2 lui appliquer un comportement "click"
+	$('.ui').on('mouseenter mouseleave click', function(event){
+		if(event.type=="mouseenter"){
+			$(this).attr('src', "images/close_over.png");
+		}
+		if(event.type=="mouseleave"){
+			$(this).attr('src', "images/close.png");
+		}
+		if(event.type=="click"){
+			$('#bgShadow').remove();
+		}
+		});
+	$('#bgShadow').bind('click', function(event){
+		$(this).remove();	
+	});
+}
+function placeImage(){
+	//On applique à l'aide de la fonction (méthode) css(param1, param2)
+	//param1 = la propriété css sur laquelle on veut travailler.
+	//param2 = la valeur que l'on souhaiate appliquer
+	var marge = ($(window).innerWidth()-$('img').width())/2;
+	$('img').css("margin-left", marge);
+	var margeTop = $(window).innerHeight()-$('img').height();
+	$('img').css("margin-top", margeTop*.5);
+}
+
+</script>
+</head>
+
+<body>
+<img src="images/koala.jpg" alt="" data-rel=""/>
+</body>
+</html>

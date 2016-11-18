@@ -1,0 +1,126 @@
+*{
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	 box-sizing: border-box; 
+}
+html{
+	font-size: 62.5%;
+}
+body{
+	font-size: 1.6em;
+	font-family: sans-serif;
+	background-color:#f6f6f6;
+	color: #333;
+}
+ul,ol{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+h1,h2,h3,h4{
+	font-weight: lighter;
+}
+#conteneurLivraison{
+	width: 60%;
+	background-color: #fff;
+	margin: 100px auto;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+	border-radius: 3px;
+	padding: 10px;
+}
+#conteneurLivraison h2{
+	line-height: 50px;
+	color: #333;
+	font-size: 1.7em;
+}
+#conteneurLivraison ul{
+	width: 100%;
+}
+#conteneurLivraison ul li{
+	height: 30px;
+	position: relative;
+}
+
+#conteneurLivraison ul strong{
+	line-height: 30px;
+	font-size: 1.1em;
+	position: absolute;
+	left:0;
+	display: none;
+	-moz-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+#conteneurLivraison #fondProgress,#conteneurLivraison #fondProgress #progressBar{
+	background-color: #eee;
+	height: 26px;
+	margin: 2px 0;
+	display: block;
+	border-radius: 15px;
+	position: relative;
+	width: 100%;
+}
+#conteneurLivraison #fondProgress #progressBar{
+	width: 26px;
+	background-color: #008a00;
+	margin: 0;
+	z-index: 2;
+}
+#conteneurLivraison #fondProgress #situationPuce{
+	background-color: #003700;
+	border-radius:50%;
+	position: absolute;
+	top:0;
+	height: 26px;
+	width: 26px;
+	right: 0;
+	z-index:3; 
+}
+#conteneurLivraison #fondProgress #endPuce{
+	background-color: #eee;
+	border-radius:50%;
+	border: 2px solid #008a00;
+	position: absolute;
+	top:0;
+	height: 26px;
+	width: 26px;
+	right: 0;
+	z-index:1; 
+}
+/*  */
+#conteneurLivraison #fondProgress #arrowProgress{
+	background:url(../img/down-arrow.png) no-repeat center top;
+	position: absolute;
+	top:20px;
+	left:5px;
+	width: 16px;
+	height: 16px;
+	z-index: 1;
+
+}
+#conteneurLivraison ul li:last-child{
+	margin-top:10px; 
+	height: 40px;
+}
+#conteneurLivraison ul li:last-child p{
+	width: 90px;
+	display: inline-block;
+	position:absolute;
+	top :0;
+	color:#000;
+}
+#conteneurLivraison ul li:last-child p.firstMessage{
+	left:0;
+	text-align: left;
+}
+#conteneurLivraison ul li:last-child p.finalMessage{
+	width: 250px;
+	text-align: right;
+	color: #008a00;
+	right: 0;
+};

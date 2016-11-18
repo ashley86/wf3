@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Document sans nom</title>
+<script type="text/javascript" >
+var varGlobal;
+var divScore;
+var inter;
+var c;
+//08/07 Initialisation d'une variable score = 0;
+var score = 0;
+//08/07 Déclaration d'un tableau contenant les lettres de l'alphabet.
+var alphabet = Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+//08/07 Décvlaration d'un tableau contenant uniquement les voyelles afin de vérifier si on a gagné 
+//lorsqu'on clique sur un carré
+var voyelles = Array("a","e","i","o","u","y");
+//08/07 Déclaration d'un tableau contenant des codes héxadécimaux afin de changer aléatoirement
+//la couleur de fond du carré
+var couleurs =  Array("#ccc", "#f00", "#0f0", "#00f");
+function dimensionPositionGlobal(){
+	//document.getElementsByTagName('body')[0].innerHTML +='<div id="test"></div>';
+	varGlobal= document.getElementById("global");
+	//Dimensionnement à 70% de la taille de la fenêtre
+	varGlobal.style.width = "70%";
+	varGlobal.style.height = "70%";
+	varGlobal.style.backgroundColor ="#ccc";
+	varGlobal.style.position = "absolute";
+	varGlobal.style.left = "15%";
+	varGlobal.style.top = "15%";
+	varGlobal.style.overflow = "hidden";
+	//Appel à la fonction initialisant un carré
+	initCarre();
+	//08/07 Initialisation du bandeau de score
+	initDisplayScore();
+}
+function initDisplayScore(){
+	divScore = document.getElementById('result');
+	divScore.style.height = "5%";
+	divScore.style.width = "70%";
+	divScore.style.marginLeft = "15%";
+	divScore.style.backgroundColor = "#333";
+	divScore.style.color = "#fff";
+	divScore.style.position = "absolute";
+	divScore.innerHTML = "Score: "+score;
+}
+function initCarre(){
+	//Utilisation de la méthode innerHTML permettant
+	//d'ajouter du contenu dynamiquement dans un objet
+	//html
+	//08/07 Ajout du onClick sur le carré afin de vérifier la lettre qu'il contient
+	varGlobal.innerHTML = '<div id="carre" onClick="javascript:verifieLettre();"></div>';	
+	c= document.getElementById("carre");
+	c.style.width = "50px";
+	c.style.height = "50px";
+	//08/07 Ajout d'un curseur "main" sur le carré
+	c.style.cursor = "pointer";
+	c.style.backgroundColor = "#f00";
+	c.style.position = "relative";
+	//Positionnement du carré 'en dehors de la scène' à gauche
+	c.style.left = "-50px";
+	//08/07 Calcul de l'amplitude verticale dans laquelle peut être positionné le carré.
+	var amp = varGlobal.offsetHeight - c.offsetHeight;
+	//08/07 Tirage aléatoire de la position verticale du carré
+	var pos = Math.floor(Math.random()*amp);
+	//08/07 On positionne le carré à la verticale
+	c.style.top = pos+"px";
+	//08/07 Tirage aléatoire d'une lettre dans le tableau de l'alphabet
+	//On utilise la longueur du tableau (alphabet.length -> 26) -1 puisque les cases du
+	//tableau sont numérotées de 0 à 25 pour faire un tirage aléatoire et récupérer un
+	//numéro de cas dans laquelle aller chercher la lettre.
+	var num = Math.round(Math.random()*(alphabet.length-1));
+	//0807 On ajoute la lettre dans le div carré (On passe la lettre en majuscule avec toUpperCase());
+	c.innerHTML = alphabet[num].toUpperCase();
+	c.style.textAlign = "center";
+	c.style.color = "#fff";
+	c.style.fontFamily = "arial";
+	c.style.fontSize = "26px";
+	c.style.lineHeight = "50px";
+	c.style.fontWeight = "bold";
+	//08/07 option 1 Tirage aléatoire de la couleur de fond d'après un tableau
+	//num = Math.round(Math.random()*(couleurs.length-1));
+	//c.style.backgroundColor = couleurs[num];
+	//08/07 option 2 Tirage aléatoire du fond pour application RGBA
+	var r = Math.round(Math.random()*255);
+	var g = Math.round(Math.random()*255);
+	var b = Math.round(Math.random()*255);
+	c.style.backgroundColor = "rgba("+r+","+g+","+b+",1)";
+	//
+	inter = setInterval('bougeCarre()', 100);
+}
+function bougeCarre(){
+	if(c.offsetLeft<varGlobal.offsetWidth){
+		c.style.left = c.offsetLeft+10+"px";
+	}else{
+		//console.log("bouge plus!!!");
+		clearInterval(inter);
+		varGlobal.innerHTML='';
+		initCarre();	
+	}
+}
+//08/07 Vérification de la lettre se trouvant dans le carré cliqué
+function verifieLettre(){
+	var lettre = c.innerHTML;
+	if(voyelles.indexOf(lettre.toLowerCase())!=-1){
+		score +=5;	
+	}else{
+		score -=3;
+	}
+	if(score<0){
+		clearInterval(inter);
+		varGlobal.innerHTML = '<div id="gameOver" onClick="replay();">GAME OVER</div>';
+		var divOver = document.getElementById('gameOver');
+		divOver.style.position = "relative";
+		divOver.style.cursor = "pointer";
+		divOver.style.width = "50%";
+		divOver.style.height = "50%";
+		divOver.style.backgroundColor = "#000";
+		divOver.style.left = "25%";
+		divOver.style.top = "25%";
+		divOver.style.color = "#fff";	
+		divOver.style.textAlign = "center";
+		divOver.style.lineHeight = divOver.offsetHeight+"px";
+	}
+	divScore.innerHTML = "Score: "+score;
+}
+function replay(){
+	varGlobal.innerHTML ='';
+	score = 0;
+	divScore.innerHTML = "Score: "+score+"   Level:"+level;
+	initCarre();
+}
+</script>
+</head>
+
+<body onLoad="javascript:dimensionPositionGlobal();">
+<div id="result"></div>
+<div id="global"></div>
+</body>
+</html>

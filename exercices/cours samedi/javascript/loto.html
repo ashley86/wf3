@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Document sans nom</title>
+<script type="text/javascript">
+var scene;
+var bt;
+var listeNum;
+var cercle;
+var inter;
+var vitesse = 10;
+var numCercle = 0;
+function initScene(){
+	//Récupération dans la variable scène du div id=global
+	scene = document.getElementById('global');
+	scene.style.width="60%";
+	scene.style.height="60%";
+	scene.style.backgroundColor = "#ccc";
+	scene.style.position ="absolute";
+	scene.style.top="20%";
+	scene.style.left="20%";
+	scene.style.overflow = "hidden";
+	//
+	bt = document.getElementById('myButton');
+	bt.style.position = "absolute";
+	bt.style.right = "20%";
+}
+function tirage(){
+	//On lnce un nouveau tirage on supprime donc
+	//tous les objets se trouvant dans le div global
+	//à l'aide de innerHTML ="";
+	scene.innerHTML='';
+	numCercle = 0;
+	initListe();
+	//
+	initCercle();
+}
+function initListe(){
+	//On instancie la variable listeNum en tant que 
+	//tableau -> remise à zéro du table s'il pré-existait suite à un tirage
+	listeNum = Array();
+	//On peuple le tableau à l'aide d'une boucle
+	for(var i=1; i<50; i++){
+		//L'unstruction push crée une colonne à la fin
+		//du tableau et met la valeur passée en paramètre (ici i) c'est à dire
+		//dans les parenthèses dans la colonne créée
+		listeNum.push(i);
+	}
+}
+function initCercle(){
+	var t= document.getElementsByClassName('cercle');
+	//On mémorise dans la variable numId la longueur
+	//du tableau avant la création du cercle
+	var numId = t.length;
+	scene.innerHTML += '<div class="cercle" id="cercle'+numId+'"></div>';
+	//On incrémente (de +1) la variable numCercle -> numCercle++ équivaut à numCercle = numCercle +1
+	numCercle++;
+	cercle = document.getElementById("cercle"+numId);
+	cercle.style.backgroundColor = "#f00";	
+	alert(numCercle);
+	if(numCercle==5){
+		cercle.style.backgroundColor = "#00f";
+	}
+	cercle.style.width = "50px";
+	cercle.style.height = "50px";
+	cercle.style.position = "absolute";
+	cercle.style.color = "#fff";
+	cercle.style.borderRadius = "25px";
+	cercle.style.lineHeight = "50px";
+	cercle.style.textAlign =" center";
+	cercle.style.top = -cercle.offsetHeight+"px";
+	//Positionnement à l'horizontal du cercle
+	//1) Connaitre la valeur de l'espace disponible entre chaque cercle
+	var espace = (scene.offsetWidth-(5*cercle.offsetWidth))/6;
+	cercle.style.left = numCercle*espace+numId*cercle.offsetWidth+"px";
+	//Tirage aléatoire d'un numéro dans le tableau
+	var num = Math.round(Math.random()*listeNum.length-1);
+	//Mise en place du chiffre dans le cercle et conversion
+	//de ce chiffre en chaine de caractère à l'aide de l'instruction toString();
+	cercle.innerHTML = listeNum[num].toString();
+	//Suppression de la colonne du tableau afin de ne pas
+	//tirer deux fois le même chiffre
+	listeNum.splice(num, 1);
+	inter = setInterval('bougeCercle()', 20);
+}
+function bougeCercle(){
+	if(cercle.offsetTop+vitesse<scene.offsetHeight/2-cercle.offsetHeight/2){
+		cercle.style.top = cercle.offsetTop+vitesse+"px";
+	}else{
+		cercle.style.top = 	scene.offsetHeight/2-cercle.offsetHeight/2+"px";
+		clearInterval(inter);
+		if(numCercle<5){
+			initCercle();	
+		}
+	}
+}
+</script>
+</head>
+
+<body onLoad="javascript:initScene();">
+<input type="button" value="lancer le tirage" id="myButton" onClick="javascript:tirage();"/>
+<div id="global"></div>
+</body>
+</html>
